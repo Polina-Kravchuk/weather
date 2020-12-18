@@ -1,0 +1,11 @@
+<!--<p>current-weather-component works!</p> -->
+
+<div> The temperature in the city</div>
+<div> {{CurrentWeather.current.last_updated}}</div>
+<div>{{CurrentWeather.current.temp_c}} C</div>
+<ng-content></ng-content>
+
+<div> {{CurrentWeather.current.condition.text}}</div>
+<img [src]="CurrentWeather.current.condition.icon">
+
+

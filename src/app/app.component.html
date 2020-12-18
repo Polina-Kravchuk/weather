@@ -1,0 +1,68 @@
+<!-- <carousel>
+  <div class="carousel-cell">
+    <img src="https://rule34.xyz/files/thumbnail/3124/3124998.jpg">
+  </div>
+  <div class="carousel-cell">
+    <img src="https://rule34.xyz/files/thumbnail/3124/3124985.jpg">
+  </div>
+</carousel> -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
+
+
+
+<div class="title">
+ <div class="title__inner"> Weather for everyone </div>
+</div>
+
+<!-- <img src="./assets/images/clouds.jpg"> -->
+<div class="container">
+  <div class="container__background"> </div>
+    <div class="weather__start" >Enter the city name:</div>
+
+  <!-- <input [(ngModel)]="city"> -->
+
+     <mat-form-field class="example-full-width" >
+       <mat-label>City name</mat-label>
+       <input matInput placeholder="Ex. London" value="London" [(ngModel)]="city">
+     </mat-form-field>
+
+    <button mat-icon-button (click)="GetForecast()">
+      <mat-icon>search</mat-icon>
+    </button>
+
+
+ </div>
+
+
+
+
+ <br/>
+  <!--
+ <button (click)="GetCurrentWeather()">Show the weather now</button>
+ <br/>
+ <div> </div>
+
+ <div>or</div>
+ Forecast for <input type="number" step="1" [(ngModel)]="days"> days
+ <button (click)="GetForecast()">Show the forecast</button>
+  -->
+
+
+ <div *ngIf="weatherCurrentObject">
+ <app-current-weather-component  [CurrentWeather]="weatherCurrentObject"> </app-current-weather-component>
+ </div>
+
+ <div *ngIf="!isLoading" style="display: flow-root">
+ <app-forecast-component class="forecast_component_style" *ngFor="let forecastC of weatherForecastObject" [forecast]="forecastC" > </app-forecast-component>
+   <!--
+ <app-forecast-component style="display: inline-block; float: left" *ngFor="let forecastC of weatherForecastObject" [forecast]="forecastC" > </app-forecast-component>
+ -->
+</div>
+
+
+<div *ngIf="isLoading">
+  Loading...
+</div>
+

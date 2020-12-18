@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="day">
+    <div> The temperature in the city</div>
+    <div> {{forecast.date}}</div>
+    <div>{{forecast.day.avgtemp_c}} C</div>
+    <div> {{forecast.day.condition.text}}</div>
+    <img [src]="forecast.day.condition.icon" >
+  </div>
+
+  <div class="hours">
+    <carousel>
+      <div class="carousel-cell" *ngFor="let hour of forecast.hour">
+        <app-forecast-hours [forecastHour]="hour"></app-forecast-hours>
+      </div>
+    </carousel>
+  </div>
+  <!--<div *ngIf="forecast">-->
+  <!--<app-forecast-hours *ngFor="let hour of forecast.hour" [forecastHour]="hour"> </app-forecast-hours>-->
+  <!--</div>-->
+
+
+</div>
+  <!-- <carousel>
+    <div class="carousel-cell">
+      <img src="https://rule34.xyz/files/thumbnail/3124/3124998.jpg">
+    </div>
+    <div class="carousel-cell">
+      <img src="https://rule34.xyz/files/thumbnail/3124/3124985.jpg">
+    </div>
+  </carousel>
+  -->

@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.day {
+  flex: 0 0 200px;
+  height: 150px;
+  background-color: rgba(240,240,240,0.5);
+  border: 1px solid #808080;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 8px;
+}
+
+.hours {
+  flex: 1 1;
+  height: 150px;
+  /*background-color: rgba(240,240,240,0.5);*/
+  border: 1px solid #808080;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 8px;
+}

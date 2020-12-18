@@ -1,0 +1,9 @@
+<div *ngIf="forecastHour" class="hour__component">
+ <!-- <div> The temperature by hour </div> -->
+  <div>{{forecastHour.time | date:'hh:mm'}} </div>
+  <div>Temperature: {{forecastHour.temp_c}} C </div>
+  <div> {{forecastHour.condition.text}}</div>
+  <img [src]="forecastHour.condition.icon" style="height: 64px; width: 64px">
+</div>
+
+
